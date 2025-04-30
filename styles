@@ -1,12 +1,18 @@
-
 /* General Body Styling */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9; /* Light grey background */
-  background-image: url('images/Black-Lab-German-Shepherd-Mix-LS-tall-683x1024.jpg');
-  background-size: cover; /* Ensures the image covers the whole screen */
-  background-position: center;
+  background-image: 
+    url('images/Black-Lab-German-Shepherd-Mix-LS-tall-683x1024.jpg'), 
+    url('images/A_seamless_digital_illustration_background_feature.png');
+  background-size: cover, auto; /* Cover for the dog image, auto for the pattern */
+  background-position: center, center;
+  background-repeat: no-repeat, repeat; /* The dog image won't repeat, the pattern will */
+  margin: 0;
+  padding: 20px;
+  color: #333;
 }
+
 
   margin: 0;
   padding: 20px;
