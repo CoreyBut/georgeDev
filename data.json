@@ -1,18 +1,14 @@
 [
   {
-    "id": 1,
-    "name": "John Doe",
-    "email": "johndoe@example.com"
+    "date": "2025-04-27",
+    "time": "Morning",
+    "amount": "1 cup"
   },
   {
-    "id": 2,
-    "name": "Jane Smith",
-    "email": "janesmith@example.com"
-  },
-  {
-    "id": 3,
-    "name": "Samuel Green",
-    "email": "samuelgreen@example.com"
+    "date": "2025-04-28",
+    "time": "Evening",
+    "amount": "1.5 cups"
   }
 ]
+
 
