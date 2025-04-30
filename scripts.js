@@ -42,4 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log(JSON.stringify(data, null, 2)); // Export data as JSON to the console
   });
+
+  // Handle login modal form submission
+  document.getElementById("loginForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = document.getElementById("username").value;
+    // You can display the logged-in user in the navbar
+    alert(`Welcome, ${username}!`);
+    $('#loginModal').modal('hide'); // Hide modal
+  });
 });
