@@ -1,11 +1,12 @@
-script_js_content = """
 document.addEventListener("DOMContentLoaded", () => {
   const feedingForm = document.getElementById("feedingForm");
   const feedingList = document.getElementById("feedingList");
   const errorMessage = document.getElementById("errorMessage");
 
-  // Load saved entries
-  const savedData = JSON.parse(localStorage.getItem("feedings")) || [];
+  // Retrieve from localStorage on load
+  let savedData = JSON.parse(localStorage.getItem("feedings")) || [];
+
+  // Show all saved entries
   savedData.forEach(entry => {
     const listItem = document.createElement("li");
     listItem.className = "list-item list-group-item";
@@ -22,12 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const foodAmount = document.getElementById("foodAmount").value.trim();
 
     if (feedingDate && feedingTime && foodAmount) {
+      const newEntry = {
+        date: feedingDate,
+        time: feedingTime,
+        amount: foodAmount
+      };
+
+      // Create list item
       const listItem = document.createElement("li");
       listItem.className = "list-item list-group-item";
-      listItem.textContent = `${feedingDate} - ${feedingTime}: ${foodAmount}`;
+      listItem.textContent = `${newEntry.date} - ${newEntry.time}: ${newEntry.amount}`;
       feedingList.appendChild(listItem);
 
-      savedData.push({ date: feedingDate, time: feedingTime, amount: foodAmount });
+      // Update savedData and localStorage
+      savedData.push(newEntry);
       localStorage.setItem("feedings", JSON.stringify(savedData));
 
       feedingForm.reset();
@@ -39,19 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Export button
   document.getElementById("exportDataBtn").addEventListener("click", () => {
-    const items = feedingList.querySelectorAll(".list-item");
-    const data = Array.from(items).map(item => {
-      const [date, rest] = item.textContent.split(" - ");
-      const [time, amount] = rest.split(": ");
-      return { date, time, amount };
-    });
-    console.log("Final JSON data:", JSON.stringify(data, null, 2));
+    console.log("Final JSON data:", JSON.stringify(savedData, null, 2));
   });
 });
-"""
-
-# Save the file
-script_path = Path("/mnt/data/script.js")
-script_path.write_text(script_js_content.strip())
-
-script_path.name
