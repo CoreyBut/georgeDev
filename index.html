@@ -53,31 +53,31 @@ updates : Dog food tracker with built in function to add new data and work with 
 <img src="images/IMG_8399.jpg" alt="Big Bois" class="center-image">
 <img src="images/IMG_0781.jpg" alt="Puppies" class="center-image">
 
-    <!-- Feeding List -->
-    <ul id="feedingList" class="list-group mb-4">
-      <li class="list-item list-group-item">January 26, 2025 - Morning: 1 cup of kibble</li>
-      <li class="list-item list-group-item">January 25, 2025 - Evening: 1.5 cups of kibble</li>
-    </ul>
+  <!-- Feeding List -->
+<ul id="feedingList" class="list-group mb-4">
+  <!-- New entries will be appended here -->
+</ul>
 
-    <!-- Feeding Form -->
-    <form id="feedingForm">
-      <div class="mb-3">
-        <label for="feedingDate" class="form-label">Date:</label>
-        <input id="feedingDate" type="date" class="form-control" required>
-      </div>
+<!-- Feeding Form -->
+<form id="feedingForm">
+  <div class="mb-3">
+    <label for="feedingDate" class="form-label">Date:</label>
+    <input id="feedingDate" type="date" class="form-control" required>
+  </div>
 
-      <div class="mb-3">
-        <label for="feedingTime" class="form-label">Feeding Time:</label>
-        <input id="feedingTime" type="text" class="form-control" placeholder="e.g., Morning or Evening" required>
-      </div>
+  <div class="mb-3">
+    <label for="feedingTime" class="form-label">Feeding Time:</label>
+    <input id="feedingTime" type="text" class="form-control" placeholder="e.g., Morning or Evening" required>
+  </div>
 
-      <div class="mb-3">
-        <label for="foodAmount" class="form-label">Food Amount:</label>
-        <input id="foodAmount" type="text" class="form-control" placeholder="e.g., 1 cup of kibble" required>
-      </div>
+  <div class="mb-3">
+    <label for="foodAmount" class="form-label">Food Amount:</label>
+    <input id="foodAmount" type="text" class="form-control" placeholder="e.g., 1 cup of kibble" required>
+  </div>
 
-      <button type="submit" class="btn btn-primary">Save Feeding</button>
-    </form>
+  <button type="submit" class="btn btn-primary">Save Feeding</button>
+</form>
+
 
     <!-- Error Message (hidden by default) -->
     <p id="errorMessage" style="color: red; display: none;">Please fill in all fields.</p>
