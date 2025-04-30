@@ -2,10 +2,13 @@
 /* General Body Styling */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  background-color: #f4f4f9; /* Light background */
   margin: 0;
   padding: 20px;
   color: #333;
+  background-image: url('https://www.shutterstock.com/search/dog-bone-pattern'); /* Placeholder URL for a dog bone pattern */
+  background-size: cover;
+  background-repeat: repeat;
 }
 
 /* Header Styling */
@@ -13,6 +16,42 @@ h1 {
   font-size: 2em;
   text-align: center;
   margin-bottom: 10px;
+  color: #00796b; /* Greenish color for title */
+}
+
+/* Dog image styling */
+.center-image {
+  display: block;
+  max-width: 250px; /* Smaller size */
+  margin: 20px auto; /* Center the image */
+  border-radius: 10px;
+}
+
+/* Feeding List Styling */
+#feedingList {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.7); /* Light background with transparency */
+  border: 2px solid #00796b; /* Border color matching the theme */
+  border-radius: 8px;
+}
+
+.list-item {
+  padding: 10px;
+  margin: 5px 0;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.list-item:hover {
+  background-color: #f0f8ff;
+  transform: scale(1.02);
 }
 
 /* Form and Input Styling */
@@ -20,7 +59,7 @@ form {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
@@ -45,38 +84,19 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Feeding List Styling */
-#feedingList {
-  list-style-type: none;
-  padding: 0;
-  margin: 20px auto;
-  width: 80%;
-  max-width: 600px;
-}
-
-.list-item {
-  padding: 10px;
-  margin: 10px 0;
-  background: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-  transition: all 0.2s ease-in-out;
-}
-
-.list-item:hover {
-  background-color: #f0f8ff;
-  transform: scale(1.02);
-}
-
-.error-message {
-  color: red;
-  display: none;
-  text-align: center;
-}
-
 /* Footer Styling */
 footer {
   text-align: center;
   margin-top: 40px;
+  padding: 20px;
+  background-color: #00796b;
+  color: white;
+}
+
+footer button {
+  background-color: #f0ad4e; /* Orange-ish for export button */
+}
+
+footer button:hover {
+  background-color: #ec971f;
 }
