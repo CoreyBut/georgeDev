@@ -4,34 +4,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorMessage = document.getElementById("errorMessage");
 
   // Handle form submission for feeding
-  feedingForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent page refresh
+feedingForm.addEventListener("submit", (e) => {
+  e.preventDefault(); // Prevent page refresh
 
-    const feedingDate = document.getElementById("feedingDate").value;
-    const feedingTime = document.getElementById("feedingTime").value.trim();
-    const foodAmount = document.getElementById("foodAmount").value.trim();
+  const feedingDate = document.getElementById("feedingDate").value;
+  const feedingTime = document.getElementById("feedingTime").value.trim();
+  const foodAmount = document.getElementById("foodAmount").value.trim();
 
-    // Check if all fields are filled
-    if (feedingDate && feedingTime && foodAmount) {
-      // Create a new list item for the feeding
-      const listItem = document.createElement("li");
-      listItem.className = "list-item list-group-item"; // Bootstrap classes
-      listItem.textContent = `${feedingDate} - ${feedingTime}: ${foodAmount}`;
+  // Check if all fields are filled
+  if (feedingDate && feedingTime && foodAmount) {
+    // Create a new list item for the feeding
+    const listItem = document.createElement("li");
+    listItem.className = "list-item list-group-item"; // Bootstrap classes
+    listItem.textContent = `${feedingDate} - ${feedingTime}: ${foodAmount}`;
 
-      // Append the new item to the feeding list
-      feedingList.appendChild(listItem);
+    // Append the new item to the feeding list
+    feedingList.appendChild(listItem);
 
-      // Log to console to ensure the item is added to the list
-      console.log('New feeding added:', listItem.textContent);
+    // Log to console to ensure the item is added to the list
+    console.log('New feeding added:', listItem.textContent);
 
-      // Reset the form after submission
-      feedingForm.reset();
-      errorMessage.style.display = "none"; // Hide error message if fields are valid
-    } else {
-      // Show an error message if fields are empty
-      errorMessage.style.display = "block";
-    }
-  });
+    // Reset the form after submission
+    feedingForm.reset();
+    errorMessage.style.display = "none"; // Hide error message if fields are valid
+  } else {
+    // Show an error message if fields are empty
+    errorMessage.style.display = "block";
+  }
+});
+
 
   // Export Data to console as JSON
 // Export Data to console as JSON
