@@ -1,103 +1,58 @@
 /* General Body Styling */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9; /* Light grey background */
-  background-image: 
-    url('images/A_seamless_digital_illustration_background_feature.png'); 
-  background-size: cover; /* Cover for the pattern */
-  background-position: center;
-  background-repeat: repeat; /* The pattern will repeat */
-  margin: 0;
-  padding: 20px;
-  color: #333;
+  background-color: #fdfaf6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Header Styling */
 h1 {
-  font-size: 2em;
-  text-align: center;
-  margin-bottom: 10px;
-  color: #00796b; /* Greenish color for title */
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-/* Dog image styling */
-.center-image {
-  display: block;
-  max-width: 250px; /* Smaller size */
-  margin: 20px auto; /* Center the image */
-  border-radius: 10px;
+p a {
+  color: #0d6efd;
+  text-decoration: underline;
 }
 
-#feedingList {
-  list-style-type: none;
-  padding: 0;
-  margin: 20px auto;
-  width: 80%;
-  max-width: 600px;
-  background: rgba(255, 255, 255, 0.7); /* Light background with transparency */
-  border: 2px solid #00796b; /* Greenish border */
-  border-radius: 8px;
+img.img-fluid {
+  border: 3px solid #dcdcdc;
+  transition: transform 0.3s ease;
 }
 
-.list-item {
-  padding: 10px;
-  margin: 5px 0;
-  background: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-  transition: all 0.2s ease-in-out;
+img.img-fluid:hover {
+  transform: scale(1.05);
 }
 
-.list-item:hover {
-  background-color: #f0f8ff;
-  transform: scale(1.02);
+.list-group-item {
+  background-color: #fff;
+  border-left: 5px solid #007bff;
 }
 
-/* Form and Input Styling */
-form {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-input[type="date"], input[type="text"] {
-  margin: 10px 0;
-  padding: 10px;
-  width: 100%;
-  border-radius: 5px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+.btn-info {
+  background-color: #17a2b8;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-button:hover {
-  background-color: #0056b3;
+.btn-info:hover {
+  background-color: #138496;
 }
 
-/* Footer Styling */
 footer {
-  text-align: center;
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #00796b;
-  color: white;
+  border-top: 2px solid #444;
+  margin-top: 2rem;
 }
 
-footer button {
-  background-color: #f0ad4e; /* Orange-ish for export button */
+#feedingForm input {
+  background-color: #fff8f0;
+  border: 1px solid #ccc;
 }
 
-footer button:hover {
-  background-color: #ec971f;
+/* Optional paw background or dog bones (commented if not using image bg) */
+
+body {
+  background-image: url('../images/dog-bone-bg.png');
+  background-size: contain;
+  background-repeat: repeat;
 }
+
 
