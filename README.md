@@ -83,9 +83,6 @@ See the wireframe design here: [Link to your wireframe image or Figma page]
 - 🐶 [My Repo (georgeDev)](https://github.com/CoreyBut/georgeDev)  
 - 🌐 [Live Site on GitHub Pages](https://coreybut.github.io/georgeDev/)
 
-- 🌊 [WAVE Report for my site](https://wave.webaim.org/report#/https://coreybut.github.io/georgeDev/)  
-- 🧪 [Nu HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcoreybut.github.io%2FgeorgeDev%2F)
-
 ---
 
 ## 📌 License
