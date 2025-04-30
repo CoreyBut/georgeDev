@@ -34,26 +34,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Export Data to console as JSON
-  document.getElementById("exportDataBtn").addEventListener("click", () => {
-    const data = [];
-    const items = feedingList.querySelectorAll(".list-item");
-    
-    // Log all feeding items to the console to check if they're being captured
-    console.log('Feeding items:', items);
+// Export Data to console as JSON
+document.getElementById("exportDataBtn").addEventListener("click", () => {
+  const data = [];
+  const items = feedingList.querySelectorAll(".list-item");
 
-    items.forEach(item => {
-        // Split each list item text into date, time, and amount
-        const [date, time, amount] = item.textContent.split(" - ");
-        
-        // Log the extracted data for each item
-        console.log('Item data:', { date, time, amount });
+  // Check if feeding list items are correctly selected
+  console.log('Feeding items:', items);
 
-        data.push({ date, time, amount });
-    });
+  items.forEach(item => {
+    const [date, time, amount] = item.textContent.split(" - ");
 
-    // Log the final JSON data to the console
-    console.log('Final JSON data:', JSON.stringify(data, null, 2));
+    // Log the extracted data for each item
+    console.log('Item data:', { date, time, amount });
+
+    data.push({ date, time, amount });
   });
+
+  // Log the final JSON data to the console
+  console.log('Final JSON data:', JSON.stringify(data, null, 2));
+});
+
 
   // Handle login modal form submission
   document.getElementById("loginForm").addEventListener("submit", (e) => {
