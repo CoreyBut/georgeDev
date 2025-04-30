@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const feedingList = document.getElementById("feedingList");
   const errorMessage = document.getElementById("errorMessage");
 
-  // Handle form submission
+  // Handle form submission for feeding
   feedingForm.addEventListener("submit", (e) => {
     e.preventDefault(); // Prevent page refresh
 
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (feedingDate && feedingTime && foodAmount) {
       // Create a new list item for the feeding
       const listItem = document.createElement("li");
-      listItem.className = "list-item list-group-item"; // Styling classes from Bootstrap
+      listItem.className = "list-item list-group-item"; // Bootstrap classes
       listItem.textContent = `${feedingDate} - ${feedingTime}: ${foodAmount}`;
 
       // Append the new item to the feeding list
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Export Data to console
+  // Export Data to console as JSON
   document.getElementById("exportDataBtn").addEventListener("click", () => {
     const data = [];
     const items = feedingList.querySelectorAll(".list-item");
@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("loginForm").addEventListener("submit", (e) => {
     e.preventDefault();
     const username = document.getElementById("username").value;
-    // You can display the logged-in user in the navbar
+    // Display the logged-in user in an alert (customize this if needed)
     alert(`Welcome, ${username}!`);
-    $('#loginModal').modal('hide'); // Hide modal
+    $('#loginModal').modal('hide'); // Hide modal after login
   });
 });
