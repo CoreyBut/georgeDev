@@ -52,3 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
     $('#loginModal').modal('hide'); // Hide modal after login
   });
 });
+
