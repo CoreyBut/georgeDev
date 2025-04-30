@@ -4,8 +4,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorMessage = document.getElementById("errorMessage");
   const loadSampleBtn = document.getElementById("loadSampleBtn");
 
-  let savedData = [];
+  const dogImageUpload = document.getElementById("dogImageUpload");
+  const userDogGallery = document.getElementById("userDogGallery");
 
+  dogImageUpload.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      const col = document.createElement("div");
+      col.className = "col-md-4 mb-3";
+
+      const img = document.createElement("img");
+      img.src = event.target.result;
+      img.className = "img-fluid rounded shadow-sm";
+      img.alt = "Uploaded Dog Photo";
+
+      col.appendChild(img);
+      userDogGallery.appendChild(col);
+    };
+    reader.readAsDataURL(file);
+  });
+
+  let savedData = [];
   const storedData = localStorage.getItem("feedings");
 
   if (storedData) {
@@ -25,15 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function displayEntry(entry, index) {
     const listItem = document.createElement("li");
     listItem.className = "list-item list-group-item d-flex justify-content-between align-items-center";
-listItem.innerHTML = `
-  <span><strong>${entry.date}</strong> - ${entry.time}: ${entry.amount}</span>
-  <span>
-    <button class="btn btn-sm btn-warning me-2 edit-btn">Edit</button>
-    <button class="btn btn-sm btn-danger delete-btn">Delete</button>
-  </span>
-`;
-
-
+    listItem.innerHTML = `
+      <span><strong>${entry.date}</strong> - ${entry.time}: ${entry.amount}</span>
+      <span>
+        <button class="btn btn-sm btn-warning me-2 edit-btn">Edit</button>
+        <button class="btn btn-sm btn-danger delete-btn">Delete</button>
+      </span>
+    `;
 
     listItem.querySelector(".edit-btn").addEventListener("click", () => {
       document.getElementById("feedingDate").value = entry.date;
