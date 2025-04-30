@@ -80,6 +80,15 @@ So that I can stay consistent with care and share cute updates with friends.
 
 ---
 
+## 📸 Project Screenshots
+
+Check out some visuals of the app in action below:
+
+![Dog Feeding App Screenshot](https://coreybut.github.io/georgeDev/IMG_0781.JPG)  
+![Another Screenshot](https://coreybut.github.io/georgeDev/IMG_8399.jpg)
+
+---
+
 ## 📌 License
 
 This project is licensed under the MIT License. See the LICENSE file for full terms.
