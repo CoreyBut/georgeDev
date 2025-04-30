@@ -62,7 +62,7 @@ So that I can stay consistent with care and share cute updates with friends.
 
 ---
 
-##🧼 Validation Reports
+## 🧼 Validation Reports
 
 🌊 [WAVE Report for my site](https://wave.webaim.org/report#/https://coreybut.github.io/georgeDev/)
 
@@ -70,7 +70,7 @@ So that I can stay consistent with care and share cute updates with friends.
 
 ---
 
-##📅 Wireframe
+## 📅 Wireframe
 See the wireframe design here: [Link to your wireframe image or Figma page]
 
 ---
