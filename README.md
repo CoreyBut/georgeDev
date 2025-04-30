@@ -80,11 +80,9 @@ So that I can stay consistent with care and share cute updates with friends.
 
 ---
 
-## 📸 Project Screenshots
+## 📸 Project Preview
 
-Check out some visuals of the app in action below:
-
-📸 [View Screenshot](https://coreybut.github.io/georgeDev/IMG_0781.JPG)
+![App Screenshot](https://raw.githubusercontent.com/CoreyBut/georgeDev/main/Screenshot%202025-04-30%20182649.png)
 
 
 ---
