@@ -1,8 +1,23 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const feedingForm = document.getElementById("feedingForm");
   const feedingList = document.getElementById("feedingList");
   const errorMessage = document.getElementById("errorMessage");
 
+
+  
+  const savedData = JSON.parse(localStorage.getItem("feedings")) || [];
+
+savedData.forEach(entry => {
+  const listItem = document.createElement("li");
+  listItem.className = "list-item list-group-item";
+  listItem.textContent = `${entry.date} - ${entry.time}: ${entry.amount}`;
+  feedingList.appendChild(listItem);
+});
+
+
+  
   // Handle form submission for feeding
 feedingForm.addEventListener("submit", (e) => {
   e.preventDefault();
