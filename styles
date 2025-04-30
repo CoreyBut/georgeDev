@@ -104,8 +104,9 @@ footer button:hover {
 
 
 .center-image {
-  display: block;
-  max-width: 250px; /* Smaller image size */
-  margin: 20px auto; /* Centers it horizontally */
-  border-radius: 10px;
+  display: block;          
+  max-width: 300px;        
+  margin: 20px auto;       
+  border-radius: 10px;     
 }
+
