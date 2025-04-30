@@ -84,8 +84,10 @@ So that I can stay consistent with care and share cute updates with friends.
 
 Check out some visuals of the app in action below:
 
-![Dog Feeding App Screenshot](https://coreybut.github.io/georgeDev/IMG_0781.JPG)  
-![Another Screenshot](https://coreybut.github.io/georgeDev/IMG_8399.jpg)
+![Screenshot](https://raw.githubusercontent.com/CoreyBut/georgeDev/main/IMG_0781.JPG)
+
+![Screenshot](https://raw.githubusercontent.com/CoreyBut/georgeDev/main/images/IMG_0781.JPG)
+
 
 ---
 
