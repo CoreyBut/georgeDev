@@ -1,37 +1,66 @@
-# Dev G - Final Project
+Author: Corey B
+Version: Dev George
 
-### Author: Corey B  
-### Version: Dev George
+Welcome to Dev G, my final project for Web Dev. This app helps track your dog's feeding schedule so you never forget when (or how much) your furry homie ate. It also gives you options to upload pictures, edit feed logs, and even export your data like a pro.
 
-Welcome to **Dev G**, my final project. This project is designed to track your dog’s feeding schedule, ensuring they get the proper portions and timing. It also includes functionality to add, edit, and manage feeding data.
-
-Visit my [GitHub profile](https://coreybut.github.io/coreybut) for more projects.
-
-## Features & Updates
-
-- **Dog Food Tracker**: Track the date, time, and amount of food your dog is fed.
-- **Form to Add New Data**: Built-in functionality to add new feeding records.
-- **Dynamic Feedings List**: View all feeding records in a neatly formatted list.
-- **Edit and Delete Feedings**: Easily edit or remove feeding records from the list.
-- **Data Export**: Export feeding data in JSON format.
-
-## Technologies Used
-- **HTML5** for structure
-- **CSS3** for styling
-- **JavaScript** for functionality
-- **Bootstrap 5** for responsive design
-
-## Installation and Setup
-
-To get started with this project, clone the repository and open the `index.html` file in your browser.
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/CoreyBut/georgeDev.git
+Check out my full portfolio: coreybut.github.io/coreybut
 
 
 
+🚀 Features
+🐶 Dog Food Tracker — track date, time, and amount of food
+
+✍️ Add/Edit/Delete Feedings — manage entries easily
+
+📥 Load Sample Data — instantly fill in a mock feeding
+
+🗃️ Export as JSON — view or copy your data in the console
+
+📸 Upload Dog Pics — store and display user-uploaded photos
+
+💾 Persistent Data — everything saves using localStorage
+
+📱 Responsive Layout — mobile-ready thanks to Bootstrap 5
 
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+🛠️ Tech Stack
+HTML5
+
+CSS3 (with custom and Bootstrap 5 styles)
+
+JavaScript (Vanilla)
+
+LocalStorage for data and images
+
+Bootstrap 5 for layout and responsiveness
+
+
+
+
+🧰 Setup Instructions
+Clone this repo:
+
+git clone https://github.com/CoreyBut/georgeDev.git
+Open index.html in your browser
+
+Start tracking your dog like the MVP they are 🏆
+
+
+🧪 Sample Code Highlight
+if (editingIndex !== null) {
+  savedData[editingIndex] = newEntry;
+  editingIndex = null;
+  feedingList.innerHTML = "";
+  savedData.forEach(displayEntry);
+}
+This block lets you edit a feeding log without duplicating or losing anything — just clean and smooth UX.
+
+
+🧠 User Story
+As a dog owner,
+I want to track my dog's feeding history and photo gallery,
+So that I can stay consistent with care and share cute updates with friends.
+
+
+📌 License
+This project is licensed under the MIT License. See the LICENSE file for full terms.
