@@ -37,8 +37,9 @@ Check out my full portfolio: [coreybut.github.io/coreybut](https://coreybut.gith
    ```bash
    git clone https://github.com/CoreyBut/georgeDev.git
 
+---
 
-🧪 Sample Code Highlight
+## 🧪 Sample Code Highlight
 
 if (editingIndex !== null) {
   savedData[editingIndex] = newEntry;
@@ -49,17 +50,16 @@ if (editingIndex !== null) {
 
 This block lets you edit a feeding log without duplicating or losing anything — just clean and smooth UX.
 
+---
 
-
-🧠 User Story
+## 🧠 User Story
 
 As a dog owner, 
 I want to track my dog's feeding history and photo gallery,
 So that I can stay consistent with care and share cute updates with friends.
 
+---
 
-
-
-📌 License
+## 📌 License
 
 This project is licensed under the MIT License. See the LICENSE file for full terms.
