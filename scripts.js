@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // Append the new item to the feeding list
       feedingList.appendChild(listItem);
 
+      // Log to console to ensure the item is added to the list
+      console.log('New feeding added:', listItem.textContent);
+
       // Reset the form after submission
       feedingForm.reset();
       errorMessage.style.display = "none"; // Hide error message if fields are valid
@@ -35,12 +38,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = [];
     const items = feedingList.querySelectorAll(".list-item");
     
+    // Log all feeding items to the console to check if they're being captured
+    console.log('Feeding items:', items);
+
     items.forEach(item => {
-      const [date, time, amount] = item.textContent.split(" - ");
-      data.push({ date, time, amount });
+        // Split each list item text into date, time, and amount
+        const [date, time, amount] = item.textContent.split(" - ");
+        
+        // Log the extracted data for each item
+        console.log('Item data:', { date, time, amount });
+
+        data.push({ date, time, amount });
     });
 
-    console.log(JSON.stringify(data, null, 2)); // Export data as JSON to the console
+    // Log the final JSON data to the console
+    console.log('Final JSON data:', JSON.stringify(data, null, 2));
   });
 
   // Handle login modal form submission
@@ -52,3 +64,4 @@ document.addEventListener("DOMContentLoaded", () => {
     $('#loginModal').modal('hide'); // Hide modal after login
   });
 });
+
