@@ -5,30 +5,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle form submission for feeding
 feedingForm.addEventListener("submit", (e) => {
-  e.preventDefault(); // Prevent page refresh
+  e.preventDefault();
+  
+  console.log("Form submitted"); // Debugging log
 
   const feedingDate = document.getElementById("feedingDate").value;
   const feedingTime = document.getElementById("feedingTime").value.trim();
   const foodAmount = document.getElementById("foodAmount").value.trim();
 
-  // Check if all fields are filled
+  // Log the form data
+  console.log("Form Data:", feedingDate, feedingTime, foodAmount);
+
   if (feedingDate && feedingTime && foodAmount) {
     const listItem = document.createElement("li");
-    listItem.className = "list-item list-group-item"; // Bootstrap classes
+    listItem.className = "list-item list-group-item";
     listItem.textContent = `${feedingDate} - ${feedingTime}: ${foodAmount}`;
     
-    // Append the new item to the feeding list
     feedingList.appendChild(listItem);
 
-    console.log('New feeding added:', listItem.textContent);
-
-    // Reset the form after submission
+    console.log("New feeding added:", listItem.textContent);
     feedingForm.reset();
-    errorMessage.style.display = "none"; // Hide error message
+    errorMessage.style.display = "none";
   } else {
-    errorMessage.style.display = "block"; // Show error message
+    errorMessage.style.display = "block";
+    console.log("Error: Missing fields");
   }
 });
+
 
 
   // Export Data to console as JSON
