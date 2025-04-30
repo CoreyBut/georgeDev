@@ -70,11 +70,6 @@ So that I can stay consistent with care and share cute updates with friends.
 
 ---
 
-## 📅 Wireframe
-See the wireframe design here: [Link to your wireframe image or Figma page]
-
----
-
 ## 🔗 Important Project Links
 
 - 📖 [Instructor README & Instructions](https://github.com/barrycumbie/jubilant-garbanzo-easy-read)  
@@ -82,6 +77,11 @@ See the wireframe design here: [Link to your wireframe image or Figma page]
 
 - 🐶 [My Repo (georgeDev)](https://github.com/CoreyBut/georgeDev)  
 - 🌐 [Live Site on GitHub Pages](https://coreybut.github.io/georgeDev/)
+
+---
+
+## 📅 Wireframe
+See the wireframe design here: [Link to your wireframe image or Figma page]
 
 ---
 
