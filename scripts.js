@@ -1,91 +1,105 @@
-// Initialize data array
-let data = [
-  { id: 1, name: "John Doe", email: "john@example.com" },
-  { id: 2, name: "Jane Smith", email: "jane@example.com" }
-];
+document.addEventListener("DOMContentLoaded", () => {
+  const feedingForm = document.getElementById("feedingForm");
+  const feedingList = document.getElementById("feedingList");
+  const errorMessage = document.getElementById("errorMessage");
 
-// Handle feeding form submission
-document.getElementById("feedingForm").addEventListener("submit", function(e) {
-  e.preventDefault(); // Prevent form from refreshing the page
+  // Handling form submission
+  feedingForm.addEventListener("submit", (e) => {
+    e.preventDefault(); // Prevent page refresh
 
-  // Get values from the form
-  const feedingDate = document.getElementById("feedingDate").value;
-  const feedingTime = document.getElementById("feedingTime").value;
-  const foodAmount = document.getElementById("foodAmount").value;
+    const feedingDate = document.getElementById("feedingDate").value;
+    const feedingTime = document.getElementById("feedingTime").value.trim();
+    const foodAmount = document.getElementById("foodAmount").value.trim();
 
-  // Create a new list item with the feeding information
-  const newFeeding = document.createElement("li");
-  newFeeding.classList.add("list-item");
-  newFeeding.textContent = `${feedingDate} - ${feedingTime}: ${foodAmount}`;
+    // Check if all fields are filled
+    if (feedingDate && feedingTime && foodAmount) {
+      const listItem = document.createElement("li");
+      listItem.className = "list-item";
+      listItem.textContent = `${feedingDate} - ${feedingTime}: ${foodAmount}`;
 
-  // Add the new feeding item to the list
-  document.getElementById("feedingList").appendChild(newFeeding);
+      // Add to the feeding list
+      feedingList.appendChild(listItem);
 
-  // Reset the form fields
-  document.getElementById("feedingForm").reset();
-});
-
-// Display the data on the page
-function displayData(data) {
-  const dataContainer = $('#dataContainer');
-  dataContainer.empty(); // Clear current list
-  data.forEach(item => {
-    dataContainer.append(`
-      <div class="data-item" data-id="${item.id}">
-        <p>Name: ${item.name}</p>
-        <p>Email: ${item.email}</p>
-        <button class="edit-btn">Edit</button>
-        <button class="delete-btn">Delete</button>
-      </div>
-    `);
+      // Reset the form
+      feedingForm.reset();
+      errorMessage.style.display = "none"; // Hide error message if valid
+    } else {
+      // Show error message if fields are incomplete
+      errorMessage.style.display = "block";
+    }
   });
-}
 
-// Form submission to add new data
-$('#addDataForm').on('submit', function(e) {
-  e.preventDefault();
-  const newName = $('#newName').val();
-  const newEmail = $('#newEmail').val();
-  
-  // Add the new data to the array and update the DOM
-  const newData = {
-    id: data.length + 1, // Simple ID generation, in a real app you would need a more robust solution
-    name: newName,
-    email: newEmail
-  };
-  data.push(newData);
-  displayData(data);
-  $('#addDataForm')[0].reset(); // Reset the form
-});
+  // Data management (using global data array)
+  let data = [
+    { id: 1, name: "John Doe", email: "john@example.com" },
+    { id: 2, name: "Jane Smith", email: "jane@example.com" }
+  ];
 
-// Editing data
-$(document).on('click', '.edit-btn', function() {
-  const dataId = $(this).closest('.data-item').data('id');
-  const itemToEdit = data.find(item => item.id === dataId);
-  
-  // Populate the form with the item's data
-  $('#newName').val(itemToEdit.name);
-  $('#newEmail').val(itemToEdit.email);
-  
-  // Change the form to update instead of add
-  $('#addDataForm').off('submit').on('submit', function(e) {
+  // Display the data dynamically on the page
+  function displayData(data) {
+    const dataContainer = $('#dataContainer');
+    dataContainer.empty(); // Clear current list
+    data.forEach(item => {
+      dataContainer.append(`
+        <div class="data-item" data-id="${item.id}">
+          <p>Name: ${item.name}</p>
+          <p>Email: ${item.email}</p>
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+        </div>
+      `);
+    });
+  }
+
+  // Add new data
+  $('#addDataForm').on('submit', function(e) {
     e.preventDefault();
-    itemToEdit.name = $('#newName').val();
-    itemToEdit.email = $('#newEmail').val();
+    const newName = $('#newName').val();
+    const newEmail = $('#newEmail').val();
+    
+    // Add new data to array and update the DOM
+    const newData = {
+      id: data.length + 1, // Simple ID generation
+      name: newName,
+      email: newEmail
+    };
+    data.push(newData);
     displayData(data);
-    $('#addDataForm')[0].reset();
+    $('#addDataForm')[0].reset(); // Reset form
   });
-});
 
-// Deleting data
-$(document).on('click', '.delete-btn', function() {
-  const dataId = $(this).closest('.data-item').data('id');
-  data = data.filter(item => item.id !== dataId); // Remove the data
+  // Editing existing data
+  $(document).on('click', '.edit-btn', function() {
+    const dataId = $(this).closest('.data-item').data('id');
+    const itemToEdit = data.find(item => item.id === dataId);
+    
+    // Populate the form with current data for editing
+    $('#newName').val(itemToEdit.name);
+    $('#newEmail').val(itemToEdit.email);
+    
+    // Change form behavior to update
+    $('#addDataForm').off('submit').on('submit', function(e) {
+      e.preventDefault();
+      itemToEdit.name = $('#newName').val();
+      itemToEdit.email = $('#newEmail').val();
+      displayData(data);
+      $('#addDataForm')[0].reset();
+    });
+  });
+
+  // Deleting data
+  $(document).on('click', '.delete-btn', function() {
+    const dataId = $(this).closest('.data-item').data('id');
+    data = data.filter(item => item.id !== dataId); // Remove data
+    displayData(data);
+  });
+
+  // Export data to the console
+  $('#exportDataBtn').on('click', function() {
+    console.log(JSON.stringify(data, null, 2)); // Export data as JSON
+  });
+
+  // Initialize the data on page load
   displayData(data);
-});
-
-// Export data to console as JSON
-$('#exportDataBtn').on('click', function() {
-  console.log(JSON.stringify(data, null, 2)); // Prints the data in JSON format
 });
 
