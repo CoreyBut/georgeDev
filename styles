@@ -2,14 +2,15 @@
 /* General Body Styling */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9; /* Light background */
+  background-color: #f4f4f9; /* Light grey background */
+  background-image: url('https://www.shutterstock.com/search/dog-bone-pattern'); /* Placeholder dog pattern */
+  background-size: cover;
+  background-repeat: repeat;
   margin: 0;
   padding: 20px;
   color: #333;
-  background-image: url('https://www.shutterstock.com/search/dog-bone-pattern'); /* Placeholder URL for a dog bone pattern */
-  background-size: cover;
-  background-repeat: repeat;
 }
+
 
 /* Header Styling */
 h1 {
@@ -27,7 +28,6 @@ h1 {
   border-radius: 10px;
 }
 
-/* Feeding List Styling */
 #feedingList {
   list-style-type: none;
   padding: 0;
@@ -35,9 +35,10 @@ h1 {
   width: 80%;
   max-width: 600px;
   background: rgba(255, 255, 255, 0.7); /* Light background with transparency */
-  border: 2px solid #00796b; /* Border color matching the theme */
+  border: 2px solid #00796b; /* Greenish border */
   border-radius: 8px;
 }
+
 
 .list-item {
   padding: 10px;
@@ -99,4 +100,12 @@ footer button {
 
 footer button:hover {
   background-color: #ec971f;
+}
+
+
+.center-image {
+  display: block;
+  max-width: 250px; /* Smaller image size */
+  margin: 20px auto; /* Centers it horizontally */
+  border-radius: 10px;
 }
