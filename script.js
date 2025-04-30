@@ -4,15 +4,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorMessage = document.getElementById("errorMessage");
 
   // Retrieve from localStorage on load
-  let savedData = JSON.parse(localStorage.getItem("feedings")) || [];
+let savedData = [];
 
-  // Show all saved entries
+const storedData = localStorage.getItem("feedings");
+
+if (storedData) {
+  savedData = JSON.parse(storedData);
   savedData.forEach(entry => {
     const listItem = document.createElement("li");
     listItem.className = "list-item list-group-item";
     listItem.textContent = `${entry.date} - ${entry.time}: ${entry.amount}`;
     feedingList.appendChild(listItem);
   });
+} else {
+  // If nothing is in localStorage, load from data.json
+  fetch("data/data.json")
+    .then(response => response.json())
+    .then(jsonData => {
+      savedData = jsonData;
+      jsonData.forEach(entry => {
+        const listItem = document.createElement("li");
+        listItem.className = "list-item list-group-item";
+        listItem.textContent = `${entry.date} - ${entry.time}: ${entry.amount}`;
+        feedingList.appendChild(listItem);
+      });
+      localStorage.setItem("feedings", JSON.stringify(savedData)); // Save jsonData to localStorage
+    })
+    .catch(error => console.error("Failed to load data.json", error));
+}
+
 
   // Handle form submission
   feedingForm.addEventListener("submit", (e) => {
@@ -46,6 +66,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+fetch("data/data.json")
+  .then(response => response.json())
+  .then(jsonData => {
+    jsonData.forEach(entry => {
+      savedData.push(entry); // push to local array
+      const listItem = document.createElement("li");
+      listItem.className = "list-item list-group-item";
+      listItem.textContent = `${entry.date} - ${entry.time}: ${entry.amount}`;
+      feedingList.appendChild(listItem);
+    });
+  })
+  .catch(error => console.error("Failed to load data.json", error));
+
+  
   // Export button
   document.getElementById("exportDataBtn").addEventListener("click", () => {
     console.log("Final JSON data:", JSON.stringify(savedData, null, 2));
