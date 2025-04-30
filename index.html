@@ -1,3 +1,12 @@
+<!-- 
+author: Corey B
+version: Dev George,
+updates : Dog food tracker with built in function to add new data and work with it
+
+-->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +19,50 @@
   <link rel="stylesheet" href="styles/normalize.css">
   <!-- Your custom CSS file -->
   <link rel="stylesheet" href="styles/style.css">
+<title>devGeorge Dog Food Tracker</title>
+  
 </head>
+
+  
+  <h1>Dog Feeding Tracker</h1>
+  <p>
+    Keep track of your dog's feeding schedule to ensure proper portions and timing. Visit
+    <a href="https://www.petmd.com/dog/nutrition/are-you-feeding-your-dog-right-amount" target="_blank">PET MD</a> for tips.
+  </p>
+
+  <!-- Dog image -->
+  <img src="https://www.thelabradorsite.com/wp-content/uploads/2021/05/Black-Lab-German-Shepherd-Mix-LS-tall-683x1024.jpg" alt="Black Lab German Shepherd Mix" class="center-image">
+
+  <!-- Feeding List -->
+  <ul id="feedingList">
+    <li class="list-item">January 26, 2025 - Morning: 1 cup of kibble</li>
+    <li class="list-item">January 25, 2025 - Evening: 1.5 cups of kibble</li>
+  </ul>
+
+  <!-- Feeding Form -->
+  <form id="feedingForm">
+    <label for="feedingDate">Date:</label>
+    <input id="feedingDate" type="date" required>
+
+    <label for="feedingTime">Feeding Time:</label>
+    <input id="feedingTime" type="text" placeholder="e.g., Morning or Evening" required>
+
+    <label for="foodAmount">Food Amount:</label>
+    <input id="foodAmount" type="text" placeholder="e.g., 1 cup of kibble" required>
+
+    <button id="saveFeeding" class="btn">Save Feeding</button>
+  </form>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="cwbutler1@una.edu">Author: Corey B</a></p>
+    <p><a href="https://codepen.io/cbutle/pen/vEBzPdv?editors=1111">Link to CodePen</a></p>
+    <img src="https://media.makeameme.org/created/dogegood-boi-good.jpg" alt="Doge Boi" class="center-image">
+  </footer>
+
+  <script src="script.js"></script>
+
+  
 <body>
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
