@@ -1,31 +1,47 @@
-$(document).ready(function() {
-  let data = [];
-  
-  fetch('data.json')
-    .then(response => response.json())
-    .then(jsonData => {
-      data = jsonData;
-      displayData(data);
-    });
+// Initialize data array
+let data = [
+  { id: 1, name: "John Doe", email: "john@example.com" },
+  { id: 2, name: "Jane Smith", email: "jane@example.com" }
+];
 
-  function displayData(data) {
-    const dataContainer = $('#dataContainer');
-    dataContainer.empty();
-    data.forEach(item => {
-      dataContainer.append(`
-        <div class="data-item" data-id="${item.id}">
-          <p>Name: ${item.name}</p>
-          <p>Email: ${item.email}</p>
-          <button class="edit-btn">Edit</button>
-          <button class="delete-btn">Delete</button>
-        </div>
-      `);
-    });
-  }
+// Handle feeding form submission
+document.getElementById("feedingForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // Prevent form from refreshing the page
+
+  // Get values from the form
+  const feedingDate = document.getElementById("feedingDate").value;
+  const feedingTime = document.getElementById("feedingTime").value;
+  const foodAmount = document.getElementById("foodAmount").value;
+
+  // Create a new list item with the feeding information
+  const newFeeding = document.createElement("li");
+  newFeeding.classList.add("list-item");
+  newFeeding.textContent = `${feedingDate} - ${feedingTime}: ${foodAmount}`;
+
+  // Add the new feeding item to the list
+  document.getElementById("feedingList").appendChild(newFeeding);
+
+  // Reset the form fields
+  document.getElementById("feedingForm").reset();
 });
 
+// Display the data on the page
+function displayData(data) {
+  const dataContainer = $('#dataContainer');
+  dataContainer.empty(); // Clear current list
+  data.forEach(item => {
+    dataContainer.append(`
+      <div class="data-item" data-id="${item.id}">
+        <p>Name: ${item.name}</p>
+        <p>Email: ${item.email}</p>
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+      </div>
+    `);
+  });
+}
 
-//form submissions
+// Form submission to add new data
 $('#addDataForm').on('submit', function(e) {
   e.preventDefault();
   const newName = $('#newName').val();
@@ -42,8 +58,7 @@ $('#addDataForm').on('submit', function(e) {
   $('#addDataForm')[0].reset(); // Reset the form
 });
 
-
-//editing
+// Editing data
 $(document).on('click', '.edit-btn', function() {
   const dataId = $(this).closest('.data-item').data('id');
   const itemToEdit = data.find(item => item.id === dataId);
@@ -62,15 +77,15 @@ $(document).on('click', '.edit-btn', function() {
   });
 });
 
-
-//delete function
+// Deleting data
 $(document).on('click', '.delete-btn', function() {
   const dataId = $(this).closest('.data-item').data('id');
   data = data.filter(item => item.id !== dataId); // Remove the data
   displayData(data);
 });
 
-//export data to console
+// Export data to console as JSON
 $('#exportDataBtn').on('click', function() {
   console.log(JSON.stringify(data, null, 2)); // Prints the data in JSON format
 });
+
