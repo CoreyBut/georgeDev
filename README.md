@@ -17,7 +17,7 @@ Check out my full portfolio: [coreybut.github.io/coreybut](https://coreybut.gith
 - 🗃️ **Export as JSON** — view or copy your data in the console  
 - 📸 **Upload Dog Pics** — store and display user-uploaded photos  
 - 💾 **Persistent Data** — everything saves using `localStorage`  
-- 📱 **Responsive Layout** — mobile-ready thanks to Bootstrap 5
+- 📱 **Responsive Layout** — mobile-ready thanks to Bootstrap 5  
 
 ---
 
@@ -37,6 +37,8 @@ Check out my full portfolio: [coreybut.github.io/coreybut](https://coreybut.gith
    ```bash
    git clone https://github.com/CoreyBut/georgeDev.git
 
+2. Open index.html in your browser or push to GitHub Pages to view live.
+   
 ---
 
 ## 🧪 Sample Code Highlight
@@ -60,20 +62,30 @@ So that I can stay consistent with care and share cute updates with friends.
 
 ---
 
-📌 Validation Reports
+🧼 Validation Reports
 
-WAVE Accessibility Report
+🌊 WAVE Accessibility Report
 
-Nu HTML Validator
+🧪 Nu HTML Validator
 
 ---
 
 📅 Wireframe
-
-See the wireframe design here
+See the wireframe design here: [Link to your wireframe image or Figma page]
 
 ---
 
+🔗 Important Project Links
+
+📖 Instructor README & Instructions
+
+🧪 Instructor Sample Solution
+
+🐶 My Repo (georgeDev)
+
+🌐 Live Site
+
+---
 
 ## 📌 License
 
