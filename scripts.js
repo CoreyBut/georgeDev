@@ -1,5 +1,4 @@
-
-
+script_js_content = """
 document.addEventListener("DOMContentLoaded", () => {
   const feedingForm = document.getElementById("feedingForm");
   const feedingList = document.getElementById("feedingList");
@@ -49,4 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Final JSON data:", JSON.stringify(data, null, 2));
   });
 });
+"""
 
+# Save the file
+script_path = Path("/mnt/data/script.js")
+script_path.write_text(script_js_content.strip())
+
+script_path.name
