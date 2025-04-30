@@ -82,7 +82,8 @@ So that I can stay consistent with care and share cute updates with friends.
 
 ## 📸 Project Preview
 
-![App Screenshot](https://raw.githubusercontent.com/CoreyBut/georgeDev/main/Screenshot%202025-04-30%20182649.png)
+![Feeding Form Screenshot](https://raw.githubusercontent.com/CoreyBut/georgeDev/main/GeorgeSS1.png)  
+![Dog Images Section](https://raw.githubusercontent.com/CoreyBut/georgeDev/main/GeorgeSS2.png)
 
 
 ---
