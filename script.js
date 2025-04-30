@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
     reader.readAsDataURL(file);
   });
 
+  
+  let editingIndex = null;
+
   let savedData = [];
   const storedData = localStorage.getItem("feedings");
 
@@ -55,14 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
       </span>
     `;
 
-    listItem.querySelector(".edit-btn").addEventListener("click", () => {
-      document.getElementById("feedingDate").value = entry.date;
-      document.getElementById("feedingTime").value = entry.time;
-      document.getElementById("foodAmount").value = entry.amount;
-      savedData.splice(index, 1); // remove original
-      listItem.remove();
-      localStorage.setItem("feedings", JSON.stringify(savedData));
-    });
+listItem.querySelector(".edit-btn").addEventListener("click", () => {
+  document.getElementById("feedingDate").value = entry.date;
+  document.getElementById("feedingTime").value = entry.time;
+  document.getElementById("foodAmount").value = entry.amount;
+  editingIndex = index; // mark we're editing this one
+});
+
 
     listItem.querySelector(".delete-btn").addEventListener("click", () => {
       if (confirm("Delete this entry?")) {
@@ -84,9 +86,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (feedingDate && feedingTime && foodAmount) {
       const newEntry = { date: feedingDate, time: feedingTime, amount: foodAmount };
-      savedData.push(newEntry);
-      localStorage.setItem("feedings", JSON.stringify(savedData));
-      displayEntry(newEntry, savedData.length - 1);
+if (editingIndex !== null) {
+  savedData[editingIndex] = newEntry;
+  editingIndex = null;
+  feedingList.innerHTML = "";
+  savedData.forEach(displayEntry);
+} else {
+  savedData.push(newEntry);
+  displayEntry(newEntry, savedData.length - 1);
+}
+
+localStorage.setItem("feedings", JSON.stringify(savedData));
+
       feedingForm.reset();
       errorMessage.style.display = "none";
     } else {
