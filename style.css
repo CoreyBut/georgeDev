@@ -4,20 +4,13 @@ body {
   background-color: #f4f4f9; /* Light grey background */
   background-image: 
     url('images/A_seamless_digital_illustration_background_feature.png'); 
-  background-size: cover, auto; /* Cover for the dog image, auto for the pattern */
-  background-position: center, center;
-  background-repeat: no-repeat, repeat; /* The dog image won't repeat, the pattern will */
+  background-size: cover; /* Cover for the pattern */
+  background-position: center;
+  background-repeat: repeat; /* The pattern will repeat */
   margin: 0;
   padding: 20px;
   color: #333;
 }
-
-
-  margin: 0;
-  padding: 20px;
-  color: #333;
-}
-
 
 /* Header Styling */
 h1 {
@@ -45,7 +38,6 @@ h1 {
   border: 2px solid #00796b; /* Greenish border */
   border-radius: 8px;
 }
-
 
 .list-item {
   padding: 10px;
@@ -107,13 +99,5 @@ footer button {
 
 footer button:hover {
   background-color: #ec971f;
-}
-
-
-.center-image {
-  display: block;          
-  max-width: 300px;        
-  margin: 20px auto;       
-  border-radius: 10px;     
 }
 
