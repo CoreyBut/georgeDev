@@ -80,11 +80,6 @@ So that I can stay consistent with care and share cute updates with friends.
 
 ---
 
-## 📅 Wireframe
-See the wireframe design here: [Link to your wireframe image or Figma page]
-
----
-
 ## 📌 License
 
 This project is licensed under the MIT License. See the LICENSE file for full terms.
