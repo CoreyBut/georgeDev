@@ -3,9 +3,11 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9; /* Light grey background */
-  background-image: url('https://www.shutterstock.com/search/dog-bone-pattern'); /* Placeholder dog pattern */
-  background-size: cover;
-  background-repeat: repeat;
+  background-image: url('images/Black-Lab-German-Shepherd-Mix-LS-tall-683x1024.jpg');
+  background-size: cover; /* Ensures the image covers the whole screen */
+  background-position: center;
+}
+
   margin: 0;
   padding: 20px;
   color: #333;
