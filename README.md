@@ -62,28 +62,29 @@ So that I can stay consistent with care and share cute updates with friends.
 
 ---
 
-🧼 Validation Reports
+##🧼 Validation Reports
 
-🌊 WAVE Accessibility Report
+🌊 [WAVE Report for my site](https://wave.webaim.org/report#/https://coreybut.github.io/georgeDev/)
 
-🧪 Nu HTML Validator
+🧪 [Nu HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcoreybut.github.io%2FgeorgeDev%2F)
 
 ---
 
-📅 Wireframe
+##📅 Wireframe
 See the wireframe design here: [Link to your wireframe image or Figma page]
 
 ---
 
-🔗 Important Project Links
+## 🔗 Important Project Links
 
-📖 Instructor README & Instructions
+- 📖 [Instructor README & Instructions](https://github.com/barrycumbie/jubilant-garbanzo-easy-read)  
+- 🧪 [Instructor Sample Solution](https://barrycumbie.github.io/supreme-sniffle-solutions/dev-able-solution.html)
 
-🧪 Instructor Sample Solution
+- 🐶 [My Repo (georgeDev)](https://github.com/CoreyBut/georgeDev)  
+- 🌐 [Live Site on GitHub Pages](https://coreybut.github.io/georgeDev/)
 
-🐶 My Repo (georgeDev)
-
-🌐 Live Site
+- 🌊 [WAVE Report for my site](https://wave.webaim.org/report#/https://coreybut.github.io/georgeDev/)  
+- 🧪 [Nu HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcoreybut.github.io%2FgeorgeDev%2F)
 
 ---
 
