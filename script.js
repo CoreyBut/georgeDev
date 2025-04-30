@@ -3,38 +3,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const feedingList = document.getElementById("feedingList");
   const errorMessage = document.getElementById("errorMessage");
 
-  // Retrieve from localStorage on load
-let savedData = [];
+  let savedData = [];
 
-const storedData = localStorage.getItem("feedings");
+  const storedData = localStorage.getItem("feedings");
 
-if (storedData) {
-  savedData = JSON.parse(storedData);
-  savedData.forEach(entry => {
-    const listItem = document.createElement("li");
-    listItem.className = "list-item list-group-item";
-    listItem.textContent = `${entry.date} - ${entry.time}: ${entry.amount}`;
-    feedingList.appendChild(listItem);
-  });
-} else {
-  // If nothing is in localStorage, load from data.json
-  fetch("data/data.json")
-    .then(response => response.json())
-    .then(jsonData => {
-      savedData = jsonData;
-      jsonData.forEach(entry => {
-        const listItem = document.createElement("li");
-        listItem.className = "list-item list-group-item";
-        listItem.textContent = `${entry.date} - ${entry.time}: ${entry.amount}`;
-        feedingList.appendChild(listItem);
-      });
-      localStorage.setItem("feedings", JSON.stringify(savedData)); // Save jsonData to localStorage
-    })
-    .catch(error => console.error("Failed to load data.json", error));
-}
+  if (storedData) {
+    savedData = JSON.parse(storedData);
+    savedData.forEach(entry => {
+      const listItem = document.createElement("li");
+      listItem.className = "list-item list-group-item";
+      listItem.textContent = `${entry.date} - ${entry.time}: ${entry.amount}`;
+      feedingList.appendChild(listItem);
+    });
+  } else {
+    fetch("data/data.json")
+      .then(response => response.json())
+      .then(jsonData => {
+        savedData = jsonData;
+        jsonData.forEach(entry => {
+          const listItem = document.createElement("li");
+          listItem.className = "list-item list-group-item";
+          listItem.textContent = `${entry.date} - ${entry.time}: ${entry.amount}`;
+          feedingList.appendChild(listItem);
+        });
+        localStorage.setItem("feedings", JSON.stringify(savedData));
+      })
+      .catch(error => console.error("Failed to load data.json", error));
+  }
 
-
-  // Handle form submission
   feedingForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -49,13 +45,11 @@ if (storedData) {
         amount: foodAmount
       };
 
-      // Create list item
       const listItem = document.createElement("li");
       listItem.className = "list-item list-group-item";
       listItem.textContent = `${newEntry.date} - ${newEntry.time}: ${newEntry.amount}`;
       feedingList.appendChild(listItem);
 
-      // Update savedData and localStorage
       savedData.push(newEntry);
       localStorage.setItem("feedings", JSON.stringify(savedData));
 
@@ -66,21 +60,6 @@ if (storedData) {
     }
   });
 
-fetch("data/data.json")
-  .then(response => response.json())
-  .then(jsonData => {
-    jsonData.forEach(entry => {
-      savedData.push(entry); // push to local array
-      const listItem = document.createElement("li");
-      listItem.className = "list-item list-group-item";
-      listItem.textContent = `${entry.date} - ${entry.time}: ${entry.amount}`;
-      feedingList.appendChild(listItem);
-    });
-  })
-  .catch(error => console.error("Failed to load data.json", error));
-
-  
-  // Export button
   document.getElementById("exportDataBtn").addEventListener("click", () => {
     console.log("Final JSON data:", JSON.stringify(savedData, null, 2));
   });
