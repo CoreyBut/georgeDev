@@ -60,6 +60,21 @@ So that I can stay consistent with care and share cute updates with friends.
 
 ---
 
+📌 Validation Reports
+
+WAVE Accessibility Report
+
+Nu HTML Validator
+
+---
+
+📅 Wireframe
+
+See the wireframe design here
+
+---
+
+
 ## 📌 License
 
 This project is licensed under the MIT License. See the LICENSE file for full terms.
