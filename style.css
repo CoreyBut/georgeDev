@@ -47,12 +47,11 @@ footer {
   border: 1px solid #ccc;
 }
 
-/* Optional paw background or dog bones (commented if not using image bg) */
-
+/* Optional dog bone background removed for now
 body {
   background-image: url('../images/dog-bone-bg.png');
   background-size: contain;
   background-repeat: repeat;
 }
-
+*/
 
